@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
-const routes = require('./routes')
-
+const routes = require("./routes");
+require("./database").connect();
 const app = express();
 
 app.use(cors());
@@ -16,5 +16,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-console.log(`Listening at ${PORT}`);
+  console.log(`Listening at ${PORT}`);
 });
